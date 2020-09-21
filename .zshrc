@@ -13,6 +13,27 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
+# # Path to your oh-my-zsh installation.
+export ZSH="/home/soohyun/.oh-my-zsh"
+#
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Which plugins would you like to load?
+# # Standard plugins can be found in $ZSH/plugins/
+# # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# # Example format: plugins=(rails git textmate ruby lighthouse)
+# # Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+#
+source $ZSH/oh-my-zsh.sh
+
 
 #
 # zinit
@@ -80,15 +101,6 @@ export LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=3
 export TIME_STYLE='long-iso'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-#
-# lscolors
-#
-autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedxbagxcad"
-export LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=30;46:tw=0;42:ow=30;43"
-export TIME_STYLE='long-iso'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -99,5 +111,3 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 PATH="/usr/local/bin:$PATH"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
