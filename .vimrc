@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
 " 여기에 플러그인을 나열해주세요
 Plug 'vim-airline/vim-airline'
 Plug 'ayu-theme/ayu-vim'
+Plug 'APZelos/blamer.nvim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
