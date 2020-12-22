@@ -111,4 +111,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 PATH="/usr/local/bin:$PATH"
 
+alias ls='ls --color'
+
 source ~/powerlevel10k/powerlevel10k.zsh-theme
