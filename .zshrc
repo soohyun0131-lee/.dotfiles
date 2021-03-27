@@ -100,7 +100,8 @@ export LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=3
 export TIME_STYLE='long-iso'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
-
+# set JAVA_HOME
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
