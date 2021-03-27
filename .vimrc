@@ -56,6 +56,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'simnalamburt/coc-java', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
+" blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 400
+
 " ayu
 let ayucolor = 'dark'
 colorscheme ayu
