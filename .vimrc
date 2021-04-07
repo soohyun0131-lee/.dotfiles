@@ -52,6 +52,8 @@ Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'ervandew/supertab'
 Plug 'junegunn/fzf'
 Plug 'preservim/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'simnalamburt/coc-java', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 " ayu
