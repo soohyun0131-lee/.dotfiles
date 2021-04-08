@@ -58,9 +58,23 @@ call plug#end()
 let g:blamer_enabled = 1
 let g:blamer_delay = 400
 
-" ayu
+"
+" My vim theme
+"
 let ayucolor = 'dark'
-colorscheme ayu
+try
+  colorscheme ayu
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme elflord
+endtry
+
+function! s:fg(item, color)
+  execute printf('highlight %s guifg=%s', a:item, a:color)
+endfunction
+function! s:bg(item, color)
+  execute printf('highlight %s guibg=%s', a:item, a:color)
+endfunction
+
 
 " coc.nvim
 let g:coc_disable_startup_warning = 1
