@@ -23,3 +23,11 @@ $ PlugInstall
 
 # then restart the shell
 ```
+
+## 별도로 설치해야 하는 plugin들
+
+- [glances](https://nicolargo.github.io/glances/)
+- [fasd](https://github.com/clvv/fasd)
+- [fzf](https://github.com/junegunn/fzf)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [tig](https://github.com/jonas/tig)
