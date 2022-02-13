@@ -94,11 +94,11 @@ fi
 #
 # lscolors
 #
-autoload -U colors && colors
-export LSCOLORS="Gxfxcxdxbxegedxbagxcad"
-export LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=30;46:tw=0;42:ow=30;43"
-export TIME_STYLE='long-iso'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# autoload -U colors && colors
+# export LSCOLORS="Gxfxcxdxbxegedxbagxcad"
+# export LS_COLORS="di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=30;46:tw=0;42:ow=30;43"
+# export TIME_STYLE='long-iso'
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # set JAVA_HOME
 # export JAVA_HOME=$(/usr/libexec/java_home)
@@ -112,7 +112,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 PATH="/usr/local/bin:$PATH"
 
-alias ls='ls -G'
+# alias ls='ls -G'
+alias ls='exa'
 
+# alias for company ssh
+alias dgw02='ssh soohyunlee@dgw02.navercorp.com'
+alias ncon1='ssh soohyunlee@ncon1.navercorp.com' 
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
