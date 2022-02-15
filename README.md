@@ -7,6 +7,8 @@
 # yarn : https://classic.yarnpkg.com/en/docs/install/#debian-stable
 # nodejs : https://github.com/nodesource/distributions/blob/master/README.md
 # powerlevel10k : https://github.com/romkatv/powerlevel10k
+# brew : https://brew.sh/
+# exa : https://github.com/ogham/exa
 
 $ sudo apt install zsh
 $ chsh -s $(which zsh)
