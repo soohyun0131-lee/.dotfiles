@@ -1,9 +1,13 @@
+#
+#
+#
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
 # There configs should be set before p10k instant prompt
 stty stop undef
 export GPG_TTY=$(tty)
+
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -14,26 +18,34 @@ fi
 
 
 # If you come from bash you might have to change your $PATH.
+#
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+#
 #
 # # Path to your oh-my-zsh installation.
 #export ZSH="/home/soohyun/.oh-my-zsh"
 #
 # Set name of the theme to load --- if set to "random", it will
+#
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#
 #ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Which plugins would you like to load?
 # # Standard plugins can be found in $ZSH/plugins/
 # # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # # Example format: plugins=(rails git textmate ruby lighthouse)
+#
 # # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 #
 
 
+#
+#
 #
 # zinit
 #
@@ -49,9 +61,13 @@ if is-at-least 5.1 && [[ -d ~/.zinit ]]; then
 
   # Show autosuggestions
   ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+
   if is-at-least 5.3; then
     zinit ice silent wait'1' atload'_zsh_autosuggest_start'
+
   fi
+
   zinit light zsh-users/zsh-autosuggestions
 
   # Easily access the directories you visit most often.
@@ -60,9 +76,11 @@ if is-at-least 5.1 && [[ -d ~/.zinit ]]; then
   #   $ z work
   #   $ <CTRL-G>work
   zinit light agkozak/zsh-z
+
   zinit light andrewferrier/fzf-z
   export FZFZ_SUBDIR_LIMIT=0
 
+  #
   # Automatically expand all aliases
   ZSH_EXPAND_ALL_DISABLE=word
   zinit light simnalamburt/zsh-expand-all
@@ -70,14 +88,18 @@ if is-at-least 5.1 && [[ -d ~/.zinit ]]; then
   # Others
   zinit light zdharma/fast-syntax-highlighting
   zinit light zsh-users/zsh-history-substring-search
+
   zinit light zsh-users/zsh-completions
 
   autoload -Uz compinit
   compinit
   zinit cdreplay
 
+
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
+
+
 else
   # Default terminal
   case "$TERM" in
@@ -89,8 +111,11 @@ else
 
   autoload -Uz compinit
   compinit
+
 fi
 
+#
+#
 #
 # lscolors
 #
@@ -101,10 +126,14 @@ fi
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # set JAVA_HOME
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=$(/usr/libexec/java_home -v1.8)
+#export JAVA_HOME="`/usr/libexec/java_home -v '1.8.0_322'`"
 
+#
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -112,11 +141,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 PATH="/usr/local/bin:$PATH"
 
-# alias ls='ls -G'
-alias ls='exa'
+alias ls='ls -G'
+# alias ls='exa'
 
 # alias for company ssh
 alias dgw02='ssh soohyunlee@dgw02.navercorp.com'
 alias ncon1='ssh soohyunlee@ncon1.navercorp.com' 
 
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+alias pyspark=~/spark/bin/pyspark
+
+# pyspark
+#
+export PATH=$PATH:~/.asdf/installs/python/3.10.2/bin/
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='notebook'

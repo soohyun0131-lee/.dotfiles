@@ -1,3 +1,8 @@
 [user]
-	name = Soohyun Lee
-	email = sue03094@gmail.com
+	name = soohyun0131-lee
+  email = soohyun0131.lee@navercorp.com
+
+[credential]
+  helper= osxkeychain
+[init]
+	defaultBranch = main
